@@ -1,4 +1,12 @@
-from generative_cfg import *
+import sys
+import os
+
+# Add the parent directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from generative_cfg.svg_backend import SVGBackend
+from generative_cfg.turtle import Turtle
+from generative_cfg.grammar import Grammar
 
 backend = SVGBackend()
 turtle = Turtle(backend)

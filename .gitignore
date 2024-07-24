@@ -3,3 +3,7 @@ build/
 dist/
 env/
 refrigerator/
+env_old/
+generative_cfg/__pycache__/
+old/
+venv/

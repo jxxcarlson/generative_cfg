@@ -2,12 +2,8 @@ import random
 
 
 class Grammar():
-    def __init__(self):
-        import random  # Import random here
-        self.random = random  # Store it as an instance
-        self.terminals = {}
-        self.non_terminals = {}
-        self.start_symbol = None  # Make sure this is initialized
+    def __init__(self, rules):
+        self.rules = rules
 
     def nt(self, name, body, weight=1):
         self.add_non_terminal(name, body, weight)
@@ -33,17 +29,15 @@ class Grammar():
         else:
             return lambda state: state.setdefault('result', []).append(symbol)
 
-   
-    def expand(self, symbol, state, depth):
-        if depth > 0:
-            element = self.__lookup(symbol)
+    def expand(self, symbol, state, depth, max_length):
+        if depth == 0 or symbol not in self.rules or len(state['result']) >= max_length:
+            state['result'].append(symbol)
+            # print(state['result'])
+            return
 
-            # element is either a list (non-terminal) or a lambda
-            if isinstance(element, list):
-                for e in element:
-                    if isinstance(e, str):
-                        self.expand(e, state, depth - 1)
-                    else:
-                        e(state)
-            else:
-                element(state)
+        expansion = random.choice(self.rules[symbol])
+        for e in expansion:
+            self.expand(e, state, depth - 1, max_length)
+            # print(state['result'])
+            if len(state['result']) >= max_length:
+                return

@@ -7,10 +7,18 @@ This repo contains experiments in generating images from context-free grammars u
 
 See also [www.leonrische.me](https://www.leonrische.me/pages/generative_art_with_cfgs.html).
 
+
+# Setting up a virtual environment
+
+```
+$ python -m venv env
+```
+
 # Run examples
 
 ```
 $ source/env/bin/activate
+$ pip list # if you are curious
 $ python examples/rect_spiral.py
 $ open rect_spiral.svg
 $ deactivate
