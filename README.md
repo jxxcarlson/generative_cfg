@@ -2,7 +2,9 @@
 
 # Intro
 
-This repo contains experiments in generating images from context-free grammars using turtle graphics.  Based on [l3kn/generative_cfg](https://github.com/l3kn/generative_cfg/tree/master?tab=readme-ov-file)
+This repo contains experiments in generating images from context-free grammars using turtle graphics.  Based on [l3kn/generative_cfg](https://github.com/l3kn/generative_cfg/tree/master?tab=readme-ov-file).
+The contents of `generative_cfg` and `examples` are veratim copies from [l3kn/generative_cfg](https://github.com/l3kn/generative_cfg/tree/master?tab=readme-ov-file).  They are, to the extent
+needed, updated to python 3.12.4 running in virtual enviorment as listed below.
 
 
 # Run examples
@@ -10,7 +12,7 @@ This repo contains experiments in generating images from context-free grammars u
 ```
 $ source/env/bin/activate
 $ python examples/rect_spiral.py
-$ open rect_spiral.svg
+$ open rect_spiral.svg  # open the generated svg file
 $ deactivate
 ```
 
